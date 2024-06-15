@@ -1,6 +1,6 @@
 services:
   weblate:
-    image: weblate/weblate
+    image: pilate
     tmpfs:
     - /run
     - /tmp

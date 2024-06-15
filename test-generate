@@ -10,7 +10,7 @@ fi
 cat > docker-compose.override.yml <<EOT
 services:
   weblate:
-    image: ${TEST_CONTAINER:-weblate/weblate:edge}
+    image: ${TEST_CONTAINER:-pilate:edge}
     restart: no
     environment:
       WEBLATE_TIME_ZONE: Europe/Prague
@@ -27,7 +27,7 @@ if [ "$3" = "split" ] ; then
   for service in celery-backup celery-beat celery-celery celery-memory celery-notify celery-translate ; do
     cat >> docker-compose.override.yml <<EOT
   weblate-${service}:
-    image: ${TEST_CONTAINER:-weblate/weblate:edge}
+    image: ${TEST_CONTAINER:-pilate:edge}
     restart: no
     environment:
       WEBLATE_TIME_ZONE: Europe/Prague
